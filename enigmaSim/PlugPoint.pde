@@ -45,6 +45,18 @@ class PlugPoint {
     ellipse(pos.x, pos.y+30, 20, 20);
   }
   
+  //I had problems on win10 because of the bookmarks bar. It just doesn´t work when you click at the bottom
+  //if you also have problems, try this code:
+  
+  boolean click(int x, int y){
+    if (x < pos.x +15 * 2 && x > pos.x - 15 * 2 && y < pos.y +35 * 2 && y > pos.y - 35 * 2) {
+      return true;
+    }
+    return false;    
+  }
+  
+ //instead of the original. If not, run this:
+  
   boolean click(int x, int y){
     if (x < pos.x +15 && x > pos.x - 15 && y < pos.y +35 && y > pos.y - 35) {
       return true;
